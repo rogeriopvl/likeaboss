@@ -49,8 +49,8 @@ function download(match, output, addText){
 }
 
 server.get("/", function(request, response){
-  response.simpleHtml(200, 'fuck yeah / by <a href="http://twitter.com/holman">@holman</a>.'+
-    '<p>api: use <b>fuckyeah.herokuapp.com/[your-query]</b> and shit.</p>'
+  response.simpleHtml(200, 'like a boss / by <a href="http://twitter.com/rogeriopvl">@rogeriopvl</a>, forked from <a href="http://twitter.com/holman">@holman</a>\'s fuck yeah.'+
+    '<p>api: use <b>likeaboss.herokuapp.com/[your-query]</b></p>'
   );
 })
 
@@ -64,11 +64,11 @@ server.get(new RegExp("^/(.*)(?:.jpg)?$"), function(request, response, match) {
     , chars = match.length
 
   if(chars < 7)
-    msg = '"FUCK YEAH ' + match.toUpperCase() + '"'
+    msg = '"' + match.toUpperCase() + ' LIKE A BOSS"'
   else
-    msg = '"FUCK YEAH \n' + match.toUpperCase() + '"'
+    msg = '"' + match.toUpperCase() + '\n LIKE A BOSS"'
 
-  var output = "/tmp/fuck-" + Math.floor(Math.random(10000000)*10000000) + '.jpg'
+  var output = "/tmp/likeaboss-" + Math.floor(Math.random(10000000)*10000000) + '.jpg'
   download(match, output, function(){
     var args = [
       output,
