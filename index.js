@@ -15,7 +15,7 @@ function fetch(query,cb){
     if(result)
       cb(result['unescapedUrl'])
     else
-      cb("https://img.skitch.com/20110825-ewsegnrsen2ry6nakd7cw2ed1m.png")
+      cb("https://img.skitch.com/20111124-bqnf4a22pqxabc6pw4912g2i8e.jpg")
   });
 }
 
@@ -49,8 +49,11 @@ function download(match, output, addText){
 }
 
 server.get("/", function(request, response){
-  response.simpleHtml(200, 'like a boss / by <a href="http://twitter.com/rogeriopvl">@rogeriopvl</a>, forked from <a href="http://twitter.com/holman">@holman</a>\'s fuck yeah.'+
-    '<p>api: use <b>likeaboss.herokuapp.com/[your-query]</b></p>'
+    fs.readFile(__dirname + '/index.html', function(err, data){
+        response.writeHead(200, {'Content-Type': 'text/html'});
+        response.write(data, 'utf-8');
+        response.end();
+    }
   );
 })
 
@@ -64,9 +67,9 @@ server.get(new RegExp("^/(.*)(?:.jpg)?$"), function(request, response, match) {
     , chars = match.length
 
   if(chars < 7)
-    msg = '"' + match.toUpperCase() + ' LIKE A BOSS"'
+    msg = '"' + match.toUpperCase() + ' LIKE A BOSS!"'
   else
-    msg = '"' + match.toUpperCase() + '\n LIKE A BOSS"'
+    msg = '"' + match.toUpperCase() + '\n LIKE A BOSS!"'
 
   var output = "/tmp/likeaboss-" + Math.floor(Math.random(10000000)*10000000) + '.jpg'
   download(match, output, function(){

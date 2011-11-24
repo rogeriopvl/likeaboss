@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+        <meta charset=utf-8>
+        <meta name="author" content="Rogério Vicente">
+        <title>Like A Boss!</title>
+
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link href="https://raw.github.com/necolas/normalize.css/master/normalize.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="http://blog.rogeriopvl.com/plugins/shadowbox/shadowbox.css" type="text/css" media="screen">
+
+        <style>
+            body {
+                background-color: #666;
+                font-family: 'Droid Sans', Verdana, Tahoma, Geneva, sans-serif;
+                font-size: 100%;
+                line-height: 1.6em;
+                color: #000;
+            }
+
+            h1 {
+                font-family: "Bangers",georgia, arial, sans-serif;
+                font-size: 3em;
+            }
+
+            header {
+                margin-top: 3em;
+                margin-bottom: 1em;
+                display: block;
+            }
+
+            p {
+                text-align: justify;
+            }
+
+            em {
+                font-size: 80%;
+            }
+
+            a:link, a:visited {
+                color: #55668f;
+            }
+
+            div#container {
+                width: 44em;
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div id="container">
+            <header>
+                <h1>Like A Boss!</h1>
+                <p><em>Like-a-bossify images.</em></p>
+            </header>
+            
+            <div id="main">
+                <p>
+                <form action="#" method="get">
+                    <input id="search_term" type="text" name="search_term" placeholder="Insert search term here!">
+                    <input id="search_button" type="submit" name="search_button" value="Boss it!">
+                </form>
+                </p>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://blog.rogeriopvl.com/plugins/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="http://blog.rogeriopvl.com/plugins/shadowbox/shadowbox.js"></script>
+
+        <script language="javascript">
+            $(document).ready(function(){
+                Shadowbox.init({
+                    skipSetup: true
+                });
+
+                $("#search_button").click(function(){
+                    var searchTerm = $("#search_term").val();
+                    if (searchTerm.length > 0) {
+                        Shadowbox.open({
+                            content: "http://likeaboss.herokuapp.com/"+searchTerm,
+                            player: "img",
+                            title: "Like A Boss!"
+                        });
+                    }
+                    return false;
+                });
+            });
+        </script>
+    </body>
+
+</html>
