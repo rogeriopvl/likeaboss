@@ -8,6 +8,12 @@
         <meta name="author" content="Rogério Vicente">
         <title>Like A Boss!</title>
 
+        <meta property="og:title" content="Like A Boss!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://likeaboss.herokuapp.com" />
+        <meta property="og:image" content="http://rogeriopvl.com/images/likeaboss.png" />
+        <meta property="og:site_name" content="Like A Boss!" />
+
         <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -42,6 +48,7 @@
                 padding: 0.8em;
             }
             div#info_area { margin-top: 3em; text-align: center; }
+            div#facebook_like { display: inline; float:right; margin-right: 330px; margin-top: -20px;}
             div#container { width: 44em; max-width: 90%; margin: 0 auto; }
             div#main { margin-top: 3em; }
             div#search_area { background-color: #222; border: 2px solid #444; width: auto; }
@@ -82,9 +89,12 @@
 
     <body>
         <a href="http://github.com/rogeriopvl/likeaboss"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+        <div id="facebook_like">
+            <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flikeaboss.herokuapp.com&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=21&amp;appId=181277299089" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe> 
+        </div>
         <div id="container">
             <header>
-                <h1><a href="http://likeaboss.herokuapp.com">Like A Boss!</a></h1>
+                <h1><a href="/">Like A Boss!</a></h1>
                 <p><em>Like-a-bossify your images!</em></p>
             </header>
             
