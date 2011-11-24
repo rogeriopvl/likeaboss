@@ -25,7 +25,7 @@
 
             h1 {
                 font-family: "Bangers",georgia, arial, sans-serif;
-                font-size: 3em;
+                font-size: 5em;
             }
 
             header {
@@ -34,8 +34,10 @@
                 display: block;
             }
 
-            p {
-                text-align: justify;
+            footer {
+                margin-top: 15em;
+                text-align: center;
+                font-size: 70%;
             }
 
             em {
@@ -43,13 +45,46 @@
             }
 
             a:link, a:visited {
-                color: #55668f;
+                color: #fff;
             }
 
             div#container {
                 width: 44em;
                 max-width: 90%;
                 margin: 0 auto;
+            }
+
+            div#main {
+                margin-top: 3em;
+            }
+
+            div#search_area {
+                background-color: #222;
+                border: 2px solid #444;
+                width: auto;
+            }
+
+            input#search_term {
+                background-color: transparent;
+                color: #fff;
+                border: none;
+                font-size: 190%;
+                padding: 0.5em;
+                width: 17.5em;
+            }
+
+            span#search_button {
+                height: auto;
+                width: 7em;
+                padding: 0.4em;
+                float: right;
+                text-align: center;
+                margin-top: auto;
+                margin-left: auto;
+            }
+
+            span#search_button img {
+                width: 55px;
             }
         </style>
 
@@ -63,14 +98,18 @@
             </header>
             
             <div id="main">
-                <p>
-                <form action="#" method="get">
-                    <input id="search_term" type="text" name="search_term" placeholder="Insert search term here!">
-                    <input id="search_button" type="submit" name="search_button" value="Boss it!">
-                </form>
-                </p>
+                <div id="search_area">
+                    <form id="search_form" action="#" method="get">
+                        <input id="search_term" type="text" name="search_term" placeholder="Insert search term here!">
+                        <span id="search_button"><img id="img_sbutton" src="http://rogeriopvl.com/images/search_button.png" alt="Boss it!"></span>
+                    </form>
+                </div>
             </div>
+            <footer>
+                <p>Made by <a href="http://rogeriopvl.com">Rogério Vicente</a>, forked from <a href="http://fuckyeah.herokuapp.com">Fuck Yeah</a>.</p>
+            </footer>
         </div>
+
         <script type="text/javascript" src="http://blog.rogeriopvl.com/plugins/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="http://blog.rogeriopvl.com/plugins/shadowbox/shadowbox.js"></script>
 
@@ -80,7 +119,10 @@
                     skipSetup: true
                 });
 
-                $("#search_button").click(function(){
+                $("#img_sbutton").click(processForm);
+                $("#search_form").submit(processForm);
+
+                function processForm() {
                     var searchTerm = $("#search_term").val();
                     if (searchTerm.length > 0) {
                         Shadowbox.open({
@@ -90,7 +132,7 @@
                         });
                     }
                     return false;
-                });
+                }
             });
         </script>
 
