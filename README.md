@@ -10,11 +10,11 @@ You can try the online demo at [likeaboss.herokuapp.com](http://likeaboss.heroku
 
 Let's search for nyan cat using the online demo:
 
-    [http://likeaboss.herokuapp.com/nyan%20cat](http://likeaboss.herokuapp.com/nyan%20cat)
+[http://likeaboss.herokuapp.com/nyan%20cat](http://likeaboss.herokuapp.com/nyan%20cat)
 
 or... maybe search for Stalone:
 
-    [http://likeaboss.herokuapp.com/stalone](http://likeaboss.herokuapp.com/stalone)
+[http://likeaboss.herokuapp.com/stalone](http://likeaboss.herokuapp.com/stalone)
 
 ## Known issues
 
