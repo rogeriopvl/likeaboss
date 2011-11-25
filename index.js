@@ -69,7 +69,7 @@ server.get(new RegExp("^/(.*)(?:.jpg)?$"), function(request, response, match) {
     var aux = match.split('.');
     match = aux.length == 2 && aux[1] == 'jpg' ? aux[0] : match;
 
-    if(chars < 7)
+    if(chars < 5)
         msg = '"' + match.toUpperCase() + ' LIKE A BOSS!"'
     else
         msg = '"' + match.toUpperCase() + '\n LIKE A BOSS!"'
