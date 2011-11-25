@@ -40,7 +40,7 @@ function download(match, output, addText){
 
         res.on('end', function(){
             fs.writeFile(output, img, 'binary', function (err) {
-                if (err) throw err
+                if (err) console.log(err);
             })
             addText()
         })
@@ -91,7 +91,7 @@ server.get(new RegExp("^/(.*)(?:.jpg)?$"), function(request, response, match) {
 
         im.convert(args, function(){
             fs.readFile(output, function (err, data) {
-                if (err) throw err;
+                if (err) console.log(err);
                 response.writeHead(200, {'Content-Type': 'image/jpeg' })
                 response.end(data)
             });
