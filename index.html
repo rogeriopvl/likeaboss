@@ -19,7 +19,7 @@
         <![endif]-->
 
         <link href="https://raw.github.com/necolas/normalize.css/master/normalize.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="http://blog.rogeriopvl.com/plugins/shadowbox/shadowbox.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/mjackson/shadowbox/master/source/shadowbox.css" type="text/css" media="screen">
 
         <style>
             body {
@@ -101,7 +101,7 @@
                 <h1><a href="/">Like A Boss!</a></h1>
                 <p><em>Like-a-bossify your images!</em></p>
             </header>
-            
+
             <div id="main">
                 <div id="search_area" class="rounded-corners">
                     <form id="search_form" action="#" method="get">
@@ -120,15 +120,11 @@
             </footer>
         </div>
 
-        <script type="text/javascript" src="http://blog.rogeriopvl.com/plugins/jquery-1.4.4.min.js"></script>
-        <script type="text/javascript" src="http://blog.rogeriopvl.com/plugins/shadowbox/shadowbox.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/mjackson/shadowbox/master/source/shadowbox.js"></script>
 
         <script language="javascript">
             $(document).ready(function(){
-                Shadowbox.init({
-                    skipSetup: true
-                });
-
                 $("#search_term").focus(function(){
                     $("#search_area").css('border', '2px solid #bff740');
                 });
@@ -149,8 +145,7 @@
                 function processForm() {
                     var searchTerm = $("#search_term").val();
                     if (searchTerm.length > 0) {
-                        Shadowbox.open({
-                            content: "/"+searchTerm,
+                        shadowbox.open('/' + searchTerm, {
                             player: "img",
                             title: "Like A Boss!"
                         });
