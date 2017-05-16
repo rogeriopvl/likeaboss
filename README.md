@@ -1,5 +1,7 @@
 # Like A Boss
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogeriopvl/likeaboss.svg)](https://greenkeeper.io/)
+
 This is a fork of [fuck yeah](http://fuckyeah.herokuapp.com) from [Zach Holman](http://github.com/holman).
 
 ## Usage
